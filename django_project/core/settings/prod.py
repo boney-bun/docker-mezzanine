@@ -37,7 +37,7 @@ if 'raven.contrib.django.raven_compat' in INSTALLED_APPS:
 
     RAVEN_CONFIG = {
         # sentry url
-        'dsn': SENTRY_DSN,
+        # 'dsn': SENTRY_DSN,
         # If you are using git, you can also automatically configure the
         # release based on the git info.
         # Note from Tim: This won't work since we don't mount the root
@@ -81,6 +81,12 @@ if 'raven.contrib.django.raven_compat' in INSTALLED_APPS:
             }
         },
         'loggers': {
+            # Special rules to not bother logging when host is
+            # not allowed otherwise we get lots of mail spam....
+            'django.security.DisallowedHost': {
+                'handlers': ['null'],
+                'propagate': False,
+            },
             'django.db.backends': {
                 'level': 'ERROR',
                 'handlers': ['console'],
