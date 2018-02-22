@@ -2,7 +2,7 @@
 
 """Project level settings."""
 from .project import *  # noqa
-from .secret import SENTRY_DSN
+from .secret import SENTRY_KEY
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -37,7 +37,7 @@ if 'raven.contrib.django.raven_compat' in INSTALLED_APPS:
 
     RAVEN_CONFIG = {
         # sentry url
-        'dsn': SENTRY_DSN,
+        'dsn': SENTRY_KEY,
         # If you are using git, you can also automatically configure the
         # release based on the git info.
         # Note from Tim: This won't work since we don't mount the root
