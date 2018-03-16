@@ -7,18 +7,14 @@
 {% csrf_token %}
 {% endnevercache %}
 
-{% for field in form_for_fields|sort_option1 %}
+{% for field in form_for_fields|sort_product_options %}
 {% if field.is_hidden %}
 {{ field }}
 {% else %}
 <div class="form-group input_{{ field.id_for_label }} {{ field.field.type }}
     {% if field.errors %} has-error{% endif %}">
     {% if field.label %}<label class="control-label" for="{{ field.auto_id }}">{{ field.label }}</label>{% endif %}
-        {% if field.auto_id == "option1" %}
-            {{ field | sort_product_options }}
-        {% else %}
             {{ field }}
-        {% endif %}
     {% if field.errors %}
     <p class="help-block">
         {% for e in field.errors %}
