@@ -15,7 +15,7 @@
     {% if field.errors %} has-error{% endif %}">
     {% if field.label %}<label class="control-label" for="{{ field.auto_id }}">{{ field.label }}</label>{% endif %}
         {% if field.auto_id == "option1" %}
-            {{ field | sort_option1 }}
+            {{ field | sort_product_options }}
         {% else %}
             {{ field }}
         {% endif %}

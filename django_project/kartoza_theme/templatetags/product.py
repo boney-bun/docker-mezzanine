@@ -5,7 +5,7 @@ register = template.Library()
 
 
 @register.filter
-def sort_option1(value):
+def sort_product_options(value):
     # sorting option1
     old_list = list()
     ref_list = {}
