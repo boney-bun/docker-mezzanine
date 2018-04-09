@@ -1,4 +1,5 @@
 PROJECT_ID := mezzanine
+# define all hosts below in your local ssh config
 PRODUCTION_HOST := kartoza.com
 STAGING_HOST := staging.kartoza.com
 TESTING_HOST := testing.kartoza.com
@@ -287,7 +288,6 @@ staging-sync:
 	@echo "------------------------------------------------------------------"
 	@rsync -av --progress --exclude=.sync --exclude=.DS_Store backups $(STAGING_HOST):/home/web/staging.kartoza.com/deployment
 	@rsync -av --progress --exclude=.sync --exclude=.DS_Store media $(STAGING_HOST):/home/web/staging.kartoza.com/deployment
-	-@ssh $(STAGING_HOST) "cd /home/web/staging.kartoza.com/deployment; make dbrestore; make migrate; make collectstatic"
 
 testing-sync:
 	@echo
@@ -297,7 +297,6 @@ testing-sync:
 	@echo "------------------------------------------------------------------"
 	@rsync -av --progress --exclude=.sync --exclude=.DS_Store backups $(TESTING_HOST):/home/web/testing.kartoza.com/deployment
 	@rsync -av --progress --exclude=.sync --exclude=.DS_Store media $(TESTING_HOST):/home/web/testing.kartoza.com/deployment
-	-@ssh $(TESTING_HOST) "cd /home/web/testing.kartoza.com/deployment; make dbrestore; make migrate; make collectstatic"
 
 create-machine:
 	@echo
