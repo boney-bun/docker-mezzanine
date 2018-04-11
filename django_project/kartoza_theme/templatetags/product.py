@@ -10,7 +10,6 @@ def sort_product_options(value):
     old_list = list()
     ref_list = {}
     try:
-
         for label, choice in value.fields['option1'].choices:
             # strip out %B %d-%d %Y into %B %d %Y
             temp_choice = choice.split('-')
