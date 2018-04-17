@@ -19,3 +19,10 @@ register_setting(
     default=("FRONT_PAGE_RECENT_POST",),
     append=True,
 )
+
+register_setting(
+    name="CURRENT_VAT",
+    label="Current VAT",
+    editable=True,
+    default=15,
+)
