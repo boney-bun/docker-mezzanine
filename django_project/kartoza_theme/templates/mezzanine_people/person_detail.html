@@ -34,8 +34,8 @@
                 <div>
                     <!-- image -->
                     <div class="person-avatar">
-                        <img src="{{ MEDIA_URL }}{% thumbnail person.mugshot 300 0 %}" style="padding-top: 20px;"/>
-                        <img src="{{ MEDIA_URL }}{% thumbnail person.mugshot_hover 300 0 %}" style="padding-top: 20px;display: none"/>
+                        <img src="{{ MEDIA_URL }}{% thumbnail person.mugshot 300 0 %}" style="padding-top: 20px;display: none;"/>
+                        <img src="{{ MEDIA_URL }}{% thumbnail person.mugshot_hover 300 0 %}" style="padding-top: 20px;"/>
                     </div>
                 </div>
             {% endeditable %}
